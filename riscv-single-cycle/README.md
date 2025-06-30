@@ -1,5 +1,5 @@
 # RISC-V Single-Cycle Processor
-![Block Diagram](docs/BlockDiagram.png)
+![Block Diagram](riscv-single-cycle/results/BlockDiagram.png)
 
 ## 📝 Project Overview
 32-bit RISC-V processor implementing RV32I ISA, developed for IEEE Digital Electronics Design Workshop. Features:
