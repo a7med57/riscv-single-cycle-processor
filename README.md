@@ -11,25 +11,34 @@
 ```
 riscv-single-cycle/
 ├── rtl/                   # Source files
-│   ├── core/             # Main processor
+│   ├── core/             # Main processor components
 │   │   ├── alu.v         # Arithmetic Logic Unit
-│   │   ├── control_unit.v
-│   │   └── riscv_top.v   # Top-level module
-│   └── memory/           # Memory components
-│       ├── instr_mem.v
-│       └── data_mem.v
+│   │   ├── ALUDecoder.v
+│   │   ├── MainDecoder.v
+│   │   ├── ProgramCounter.v           # Program Counter
+│   │   └── NextPC.v            
+│   ├── memory/           # Memory components
+│   │   ├── InstructionMemory.v   # Instruction Memory
+│   │   ├── RegisterFile.v 
+│   │   └── DataMemory.v    # Data Memory
+│   └── top/              # Top-level modules
+│       ├── SingleCycleCPU.v  # Main CPU top-level
+│       ├── SignExtend.v   # Sign Extension unit
+│       └── Mux2.v         # 2-to-1 Multiplexer
 ├── testbenches/          # Verification
-│   ├── alu_tb.v
-│   ├── processor_tb.v
+│   ├── SingleCycleCPU_tb.v
 │   └── test_programs/    # Assembly tests
+│       └── program.hex # Test program
 ├── docs/
-│   ├── report.pdf        # IEEE workshop report
-│   ├── block_diagram.png # Design schematic
-│   └── timing_analysis/  # FPGA timing reports
-├── results/              # Simulation outputs
-│   ├── waveform.png      # GTKWave/VCD screenshot
-│   └── log.txt           # Console output
-└── README.md             # Project showcase
+│   └── RV-32I.pdf        # IEEE workshop report
+├── results/             # Simulation outputs
+│   ├── BlockDiagram.png          
+│   ├── PC.png          #Program Counter Simulation        
+│   ├── IntsMEM.png     #Instruction Memory Check      
+│   ├── SimulationResults.png      # GTKWave/VCD screenshot
+│   ├── Synthesis.png          #Synthesis Implementation
+│   └── FPGAImplementation.png          #FPGA Implementation   
+└── README.md             # Project documentation
 ```
 
 ## 🛠️ Installation & Simulation
